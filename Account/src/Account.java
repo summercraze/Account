@@ -6,6 +6,7 @@ import java.util.Date;
 public class Account 
 {
 
+	//parameter
 	private String mName;
 	private int mId;
 	private double mBalance;
@@ -13,7 +14,7 @@ public class Account
 	private Date mDateCreated;
 	private ArrayList<Transaction> transactions;
 
-
+    //constructor
 	public Account() 
 	{
 		this.mName = "Jane Dailey";
@@ -32,45 +33,13 @@ public class Account
 		this.mDateCreated = new Date();
 		this.transactions = new ArrayList<Transaction>();
 	}
-
-
+    
 	public int getId() 
 	{
 		return mId;
 	}
-
-	public void setId(int id) 
-	{
-		mId = id;
-	}
-
-	public double getBalance()
-	{
-		return mBalance;
-	}
-    public String getName()
-    {
-    	return this.mName;
-    }
-    public ArrayList<Transaction> getTrasaction()
-    {
-    	return this.transactions;
-    }
-	public void setBalance(double balance) 
-	{
-		mBalance = balance;
-	}
-
-	public double getAnnualInterestRate() 
-	{
-		return mAnnualInterestRate;
-	}
-
-	public void setAnnualInterestRate(double annualInterestRate) 
-	{
-		mAnnualInterestRate = annualInterestRate;
-	}
-
+	
+	//getter
 	public Date getDateCreated() 
 	{
 		return mDateCreated;
@@ -81,6 +50,42 @@ public class Account
 		return mBalance * (mAnnualInterestRate / 12) / 100;
 	}
 
+	public double getBalance()
+	{
+		return mBalance;
+	}
+	
+	public double getAnnualInterestRate() 
+	{
+		return mAnnualInterestRate;
+	}
+
+    public String getName()
+    {
+    	return this.mName;
+    }
+    
+    public ArrayList<Transaction> getTrasaction()
+    {
+    	return this.transactions;
+    }
+    
+    //setter
+	public void setBalance(double balance) 
+	{
+		mBalance = balance;
+	}
+	public void setId(int id) 
+	{
+		mId = id;
+	}
+	
+	public void setAnnualInterestRate(double annualInterestRate) 
+	{
+		mAnnualInterestRate = annualInterestRate;
+	}
+
+	//method to withdraw
 	public void withdraw(double amount) 
 	{
 		mBalance -= amount;
@@ -94,7 +99,5 @@ public class Account
 		this.transactions.add(new Transaction(this.mDateCreated,'D',amount,this.mBalance,"Deposit"));
 		
 	}
-
-
 
 }
