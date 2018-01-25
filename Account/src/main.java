@@ -1,3 +1,7 @@
+/*
+ * This is a code that practice with ArrayList
+ * It print out the deposit and withdraw
+ */
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -6,14 +10,19 @@ public class main
 {
 	public static void main(String[] args)
 	{
+		//create a new account
 	   Account acct1 = new Account(1122, 1000,"George");
 	   acct1.mAnnualInterestRate = 1.5;
+	   
+	   //make several deposit and withdraw with the new account
 	   acct1.deposit(30);
 	   acct1.deposit(40);
 	   acct1.deposit(50);
 	   acct1.withdraw(5);
 	   acct1.withdraw(4);
 	   acct1.withdraw(2);
+	   
+	   //this is the account and deposit and withdraw
 	   System.out.println("Account Holder Name : " + acct1.getName() );
 	   System.out.println("Interest rate : " + acct1.mAnnualInterestRate + "%" );
 	   System.out.println("Balance : " + acct1.getBalance());
